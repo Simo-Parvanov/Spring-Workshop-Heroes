@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "heroes")
 public class Hero extends BaseEntity{
     @Column
-    private String username;
+    private String name;
     @Column
     @Enumerated(EnumType.STRING)
     private Gender gender;

@@ -1,0 +1,16 @@
+<th:block th:if="${session.user.heroName} == null">
+    <div class="container">
+        <div class="text-center">
+            <h2>User, you don't have a hero. Click below and create one.</h2>
+            <a href="/heroes/create" class="btn btn-secondary">Create hero</a>
+        </div>
+    </div>
+</th:block>
+<th:block th:unless="${session.user.heroName} == null">
+    <div class="container">
+        <div class="text-center">
+            <h2>User, you have a hero. Buy items to make your hero stronger and later join the battle.</h2>
+        </div>
+    </div>
+</th:block>
+
