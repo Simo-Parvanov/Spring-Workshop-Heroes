@@ -13,22 +13,7 @@
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
                 <ul class="navbar-nav row">
-                    
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/items/merchant">Merchant</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/items/create">Create Item</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/heroes/details/SoulTaker">Hero</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/users/profile">Profile</a>
-                    </li>
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/logout">Logout</a>
-                    </li>
+                    <th:block th:include="~{fragments/headerWithHero}"/>
                 </ul>
             </div>
         </nav>
@@ -42,17 +27,19 @@
                 <div class="row flex-md-row">
                     <div class="col col-md-6">
                         <h2>Username</h2>
-                        <h2>root</h2>
+                        <h2>[[${session.user.username}]]</h2>
                     </div>
                     <div class="col col-md-6">
                         <h2>Hero</h2>
-                        <h2>SoulTaker - 1</h2>
+                        <h2>[[${session.user.heroName}]] - 1</h2>
                     </div>
                 </div>
                 <div class="row flex-md-row mt-3">
                     <div class="col col-md-6">
                         <h2>Email</h2>
-                        <h2>root@abv.bg</h2>
+                        <h2>
+                            <span th:text="${email}"></span>
+                        </h2>
                     </div>
                     <div class="col col-md-6">
                         <img src="/img/male.jpg" class="border border-secondary"
@@ -63,12 +50,6 @@
         </div>
     </div>
 </main>
-    <footer class="footer bg-dark  py-2">
-        <div class="container-fluid text-center">
-            <div class="footer-background h5 text-white">
-                &#169; CopyRight Victorious Arena. All rights reserved.
-            </div>
-        </div>
-    </footer>
+<th:block th:include="~{fragments/footer}"/>
 </body>
 </html>

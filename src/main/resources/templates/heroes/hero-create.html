@@ -12,19 +12,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-                <ul class="navbar-nav row">
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/heroes/create">Create hero</a>
-                    </li>
-                    
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/items/create">Create Item</a>
-                    </li>
-                    
-                    
-                    <li class="nav-item mr-2">
-                        <a class="nav-link text-white active h5" href="/logout">Logout</a>
-                    </li>
+                <th:block th:include="~{fragments/headerNotHero}"/>
                 </ul>
             </div>
         </nav>
@@ -79,12 +67,6 @@
         </form>
     </div>
 </main>
-    <footer class="footer bg-dark  py-2">
-        <div class="container-fluid text-center">
-            <div class="footer-background h5 text-white">
-                &#169; CopyRight Victorious Arena. All rights reserved.
-            </div>
-        </div>
-    </footer>
+<th:block th:include="~{fragments/footer}"/>
 </body>
 </html>

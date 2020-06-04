@@ -27,6 +27,6 @@ public class Item extends BaseEntity {
     private int attack;
     @Column
     private int defence;
-    @ManyToMany(mappedBy = "inventory")
-    private List<Hero> heroes;
+    @ManyToOne
+    private Hero heroes;
 }

@@ -30,12 +30,8 @@ public class Hero extends BaseEntity{
     private int attack;
     @Column
     private int defence;
-    @ManyToMany
-    @JoinTable(name = "heroes_items",
-            joinColumns = @JoinColumn(name = "hero_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "item_id", referencedColumnName = "id"))
+    @OneToMany
     private List<Item> inventory;
-
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;

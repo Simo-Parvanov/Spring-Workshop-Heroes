@@ -7,4 +7,8 @@ public interface AuthService {
     void register(RegisterUserServiceModel model);
 
     LoginServiceUserModel login(RegisterUserServiceModel userModel) throws Exception;
+
+    Long userId(String name);
+
+    String getUserEmail(String name);
 }

@@ -34,7 +34,7 @@ public class AuthController {
     public String userRegister(@ModelAttribute RegisterUserModel model) {
         RegisterUserServiceModel userModel = modelMapper.map(model, RegisterUserServiceModel.class);
         authServices.register(userModel);
-        return "redirect:/";
+        return "redirect:/users/login";
     }
 
     @GetMapping("/login")
@@ -48,6 +48,7 @@ public class AuthController {
         try {
           LoginServiceUserModel loginModel = authServices.login(userModel);
             session.setAttribute("user", loginModel);
+            session.setAttribute("username", userModel.getUsername());
             return "redirect:/home";
         }catch (Exception ex){
             return "redirect:/users/login";

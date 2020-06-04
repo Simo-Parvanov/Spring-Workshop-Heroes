@@ -46,4 +46,14 @@ public class AuthorServiceImpl implements AuthService {
         String heroName = user.getHero() == null ? null : user.getHero().getName();
         return new LoginServiceUserModel(userModel.getUsername(), heroName);
     }
+
+    @Override
+    public Long userId(String name) {
+        return userRepository.findByUsername(name).getId();
+    }
+
+    @Override
+    public String getUserEmail(String name) {
+        return userRepository.findByUsername(name).getEmail();
+    }
 }
